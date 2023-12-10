@@ -1,0 +1,30 @@
+---
+import SideMenuItem from "./SideMenuItem.astro"
+import CharacterIcon from "@/icons/Character.astro"
+import EpisodeIcon from "@/icons/Episode.astro"
+import LocationIcon from "@/icons/Location.astro"
+import HomeIcon from "@/icons/Home.astro"
+---
+
+<nav class="flex flex-col flex-1 gap-2 items-center">
+    <div class="bg-zinc-900 p-2 flex-1">
+        <ul>
+            <SideMenuItem href="/">
+                <HomeIcon />
+                Home
+            </SideMenuItem>
+            <SideMenuItem href="/character">
+                <CharacterIcon />
+                Character
+            </SideMenuItem>
+            <SideMenuItem href="/episode">
+                <EpisodeIcon />
+                Episodes
+            </SideMenuItem>
+            <SideMenuItem href="/location">
+                <LocationIcon />
+                Location
+            </SideMenuItem>
+        </ul>
+    </div>
+</nav>
