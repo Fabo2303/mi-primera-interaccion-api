@@ -1,0 +1,18 @@
+---
+interface Props {
+    id: number;
+    name: string;
+    air_date: string;
+    episode: string;
+    created: Date;
+}
+
+const { id, name, air_date, episode, created } = Astro.props;
+---
+
+<article id=`id${id}` class="m-3 bg-slate-300 flex flex-col text-center border-amber-600 rounded-lg">
+    <h1 class="text-2xl font-bold">{name}</h1>
+    <p>Air Date: {air_date}</p>
+    <p>Episode: {episode}</p>
+    <p>Create: {created}</p>
+</article>

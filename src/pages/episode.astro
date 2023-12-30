@@ -1,13 +1,26 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import CardEpisode from "@/components/CardEpisode.astro";
+import { type Episode } from "@/types/episode.ts";
+
+const response = await fetch("https://rickandmortyapi.com/api/episode");
+const { results } = (await response.json()) as Episode;
 ---
 
 <Layout title="Episode">
-    <main>
-        Episodios
-    </main>
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {
+            results.map((location) => (
+                <CardEpisode
+                    id={location.id}
+                    name={location.name}
+                    air_date={location.air_date}
+                    episode={location.episode}
+                    created={location.created}
+                />
+            ))
+        }
+    </div>
 </Layout>
 
-<style>
-	
-</style>
+<style></style>
